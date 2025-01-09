@@ -62,15 +62,15 @@ internal fun Input.readBagOfCell(): BagOfCells {
     if (hasIdx) {
         var prevOffset = 0
         indexes = IntArray(cellCount)
-        repeat(cellCount) { index ->
-            var offset = readInt(offsetSize)
-            if (hasCacheBits) {
-                offset = offset shr 1
-            }
-            check(prevOffset <= offset) { "bag-of-cells error: offset of cell #$index must be higher, than $prevOffset" }
-            indexes[index] = offset
-            prevOffset = offset
-        }
+        // repeat(cellCount) { index ->
+        //     var offset = readInt(offsetSize)
+        //     if (hasCacheBits) {
+        //         offset = offset shr 1
+        //     }
+        //     check(prevOffset <= offset) { "bag-of-cells error: offset of cell #$index must be higher, than $prevOffset" }
+        //     indexes[index] = offset
+        //     prevOffset = offset
+        // }
     } else {
         indexes = null
     }
